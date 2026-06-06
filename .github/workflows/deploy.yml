@@ -38,6 +38,14 @@ jobs:
         run: npx tsc --noEmit
         working-directory: worker
 
+      - name: Test frontend
+        run: npm test
+        working-directory: frontend
+
+      - name: Test worker
+        run: npm test
+        working-directory: worker
+
       - name: Build frontend
         run: npm run build
         working-directory: frontend
