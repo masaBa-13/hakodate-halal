@@ -1,0 +1,25 @@
+name = "hakodate-halal-map-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "halal-map-db"
+database_id = "32a7c341-040c-4f5f-a955-48d27a4ec52e"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "53ec6f96b69e4e5fb79895bb1efe23ce"
+preview_id = "a5af37583866452189559963ed3b8fd5"
+
+# [[r2_buckets]]
+# binding = "PHOTOS"
+# bucket_name = "halal-map-photos"
+
+[vars]
+# 本番CORSはPages Functionsプロキシ経由のためワイルドカードで問題なし
+CORS_ORIGIN = "*"
+
+# シークレット（wrangler secret put で設定 / ローカルは .dev.vars に記述）
+# wrangler secret put JWT_SECRET
+# wrangler secret put GEMINI_API_KEY

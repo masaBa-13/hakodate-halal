@@ -1,0 +1,35 @@
+{
+  "name": "hakodate-halal-map-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 execute halal-map-db --file=src/db/schema.sql",
+    "db:migrate:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/schema.sql",
+    "db:migrate:001": "wrangler d1 execute halal-map-db --file=src/db/migrate_001.sql",
+    "db:migrate:001:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/migrate_001.sql",
+    "db:migrate:002": "wrangler d1 execute halal-map-db --file=src/db/migrate_002.sql",
+    "db:migrate:002:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/migrate_002.sql",
+    "db:migrate:003": "wrangler d1 execute halal-map-db --file=src/db/migrate_003.sql",
+    "db:migrate:003:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/migrate_003.sql",
+    "db:migrate:004": "wrangler d1 execute halal-map-db --file=src/db/migrate_004.sql",
+    "db:migrate:004:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/migrate_004.sql",
+    "db:migrate:005": "wrangler d1 execute halal-map-db --file=src/db/migrate_005.sql",
+    "db:migrate:005:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/migrate_005.sql",
+    "db:setup:remote": "npm run db:migrate:remote && npm run db:migrate:001:remote && npm run db:migrate:002:remote && npm run db:migrate:003:remote && npm run db:migrate:004:remote && npm run db:migrate:005:remote",
+    "db:seed": "wrangler d1 execute halal-map-db --file=src/db/seed_shops.sql",
+    "db:seed:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/seed_shops.sql"
+  },
+  "dependencies": {
+    "hono": "^4.6.0",
+    "jose": "^5.9.0",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@types/bcryptjs": "^2.4.6",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.80.0"
+  }
+}
