@@ -16,7 +16,7 @@ photosRouter.post('/shops/:id/photos', async (c) => {
   if (!shop) return c.json({ error: 'Shop not found' }, 404)
 
   const formData = await c.req.formData()
-  const files = formData.getAll('photos') as File[]
+  const files = formData.getAll('photos') as unknown as File[]
 
   if (!files.length || files.length > 3) {
     return c.json({ error: 'Upload 1 to 3 photos' }, 400)
