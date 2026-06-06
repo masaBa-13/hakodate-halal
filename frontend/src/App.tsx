@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useLang } from './i18n/useLang'
 import MapPage from './pages/MapPage'
 import ListPage from './pages/ListPage'
@@ -11,16 +11,10 @@ import TermsPage from './pages/TermsPage'
 import InfoPage from './pages/InfoPage'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
-import Footer from './components/Footer'
 import type { Lang } from './i18n/translations'
-
-// 法的・登録ページはフッター表示、BottomNavは常時表示
-const NO_FOOTER_PATHS = ['/', '/list', '/info']
 
 export default function App() {
   const { lang, setLang, t } = useLang()
-  const location = useLocation()
-  const showFooter = !NO_FOOTER_PATHS.includes(location.pathname)
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100dvh' }}>
@@ -38,7 +32,6 @@ export default function App() {
           <Route path="/info" element={<InfoPage t={t} />} />
         </Routes>
       </div>
-      {showFooter && <Footer />}
       <BottomNav t={t} />
     </div>
   )

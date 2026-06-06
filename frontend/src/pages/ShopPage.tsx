@@ -288,8 +288,16 @@ export default function ShopPage({ lang, t }: ShopPageProps) {
           <h2 style={styles.sectionTitle}>{t('uploadPhoto')}</h2>
           <p style={styles.hint}>{t('selectFiles')}</p>
           <div style={styles.uploadRow}>
-            <input type="file" accept="image/*" multiple ref={fileRef} style={styles.fileInput}
+            <input type="file" accept="image/*" multiple ref={fileRef} style={styles.fileInputHidden}
               onChange={(e) => setHasFiles((e.target.files?.length ?? 0) > 0)} />
+            <button onClick={() => fileRef.current?.click()} style={styles.chooseFileBtn}>
+              {t('chooseFile')}
+            </button>
+            <span style={styles.fileStatus}>
+              {hasFiles
+                ? t('filesSelected').replace('{n}', String(fileRef.current?.files?.length ?? 0))
+                : t('noFileSelected')}
+            </span>
             <div style={styles.btnWrap}>
               <button
                 onClick={hasFiles ? handlePhotoUpload : () => {
@@ -417,7 +425,9 @@ const styles: Record<string, React.CSSProperties> = {
   sectionTitle: { fontFamily: "'DM Serif Display', serif", fontSize: '18px', marginBottom: '6px' },
   hint: { fontSize: '12px', color: 'var(--text-muted)', marginBottom: '12px' },
   uploadRow: { display: 'flex', flexDirection: 'column', gap: '10px' },
-  fileInput: { width: '100%', fontSize: '13px' },
+  fileInputHidden: { display: 'none' },
+  chooseFileBtn: { background: 'white', border: '1.5px solid var(--border)', borderRadius: 'var(--radius-pill)', padding: '8px 16px', fontSize: '14px', cursor: 'pointer', fontWeight: 500, alignSelf: 'flex-start' },
+  fileStatus: { fontSize: '13px', color: 'var(--text-muted)' },
   btn: { background: 'var(--marker)', color: 'white', border: 'none', borderRadius: 'var(--radius-pill)', padding: '8px 20px', fontSize: '14px', fontWeight: 600, cursor: 'pointer' },
   btnDisabled: { background: 'var(--border)', color: 'var(--text-muted)', cursor: 'pointer' },
   btnWrap: { position: 'relative' as const, display: 'inline-block' },
