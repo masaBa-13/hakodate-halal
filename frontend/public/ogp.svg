@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#f9f6f0"/>
+
+  <!-- Decorative top bar -->
+  <rect width="1200" height="8" fill="#2d6a4f"/>
+
+  <!-- Map-like background pattern -->
+  <rect x="600" y="0" width="600" height="630" fill="#eef4f0" opacity="0.6"/>
+  <line x1="650" y1="0" x2="650" y2="630" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="750" y1="0" x2="750" y2="630" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="850" y1="0" x2="850" y2="630" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="950" y1="0" x2="950" y2="630" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="1050" y1="0" x2="1050" y2="630" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="1150" y1="0" x2="1150" y2="630" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="600" y1="100" x2="1200" y2="100" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="600" y1="200" x2="1200" y2="200" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="600" y1="300" x2="1200" y2="300" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="600" y1="400" x2="1200" y2="400" stroke="#d4e8dc" stroke-width="1"/>
+  <line x1="600" y1="500" x2="1200" y2="500" stroke="#d4e8dc" stroke-width="1"/>
+
+  <!-- Map pins -->
+  <circle cx="780" cy="220" r="18" fill="#2d6a4f" opacity="0.9"/>
+  <circle cx="780" cy="220" r="8" fill="white"/>
+  <circle cx="920" cy="340" r="14" fill="#2d6a4f" opacity="0.7"/>
+  <circle cx="920" cy="340" r="6" fill="white"/>
+  <circle cx="700" cy="400" r="16" fill="#2d6a4f" opacity="0.8"/>
+  <circle cx="700" cy="400" r="7" fill="white"/>
+  <circle cx="1050" cy="180" r="12" fill="#2d6a4f" opacity="0.6"/>
+  <circle cx="1050" cy="180" r="5" fill="white"/>
+  <circle cx="860" cy="480" r="13" fill="#2d6a4f" opacity="0.65"/>
+  <circle cx="860" cy="480" r="5" fill="white"/>
+
+  <!-- Left content area -->
+  <!-- Crescent moon icon -->
+  <path d="M 110 160 A 60 60 0 1 0 170 220 A 40 40 0 1 1 110 160 Z" fill="#2d6a4f"/>
+
+  <!-- Main title -->
+  <text x="80" y="320" font-family="Georgia, serif" font-size="64" font-weight="bold" fill="#1a1a1a">函館</text>
+  <text x="80" y="395" font-family="Georgia, serif" font-size="64" font-weight="bold" fill="#1a1a1a">ハラルマップ</text>
+
+  <!-- English subtitle -->
+  <text x="82" y="445" font-family="Arial, sans-serif" font-size="26" fill="#2d6a4f" font-weight="600">Hakodate Halal Map</text>
+
+  <!-- Description -->
+  <text x="82" y="500" font-family="Arial, sans-serif" font-size="20" fill="#555">ムスリム・ベジタリアンのための</text>
+  <text x="82" y="528" font-family="Arial, sans-serif" font-size="20" fill="#555">函館・道南エリア店舗情報</text>
+
+  <!-- Bottom bar -->
+  <rect y="590" width="1200" height="40" fill="#2d6a4f"/>
+  <text x="600" y="616" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">hakodate-halal.pages.dev</text>
+</svg>
