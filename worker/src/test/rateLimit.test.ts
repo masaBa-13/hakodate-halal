@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { checkRateLimit, rateLimitResponse } from '../middleware/rateLimit'
 
 function makeKV(store: Record<string, string> = {}): KVNamespace {

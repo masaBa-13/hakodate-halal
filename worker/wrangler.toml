@@ -19,6 +19,7 @@ bucket_name = "hakodate-halal-r2"
 [vars]
 # 本番CORSはPages Functionsプロキシ経由のためワイルドカードで問題なし
 CORS_ORIGIN = "*"
+PHOTOS_PUBLIC_URL = "https://pub-6d6f065e15964a99b6953c0498cd09d3.r2.dev"
 
 # シークレット（wrangler secret put で設定 / ローカルは .dev.vars に記述）
 # wrangler secret put JWT_SECRET

@@ -8,6 +8,7 @@ import { authRouter } from './routes/auth'
 export type Env = {
   DB: D1Database
   PHOTOS?: R2Bucket
+  PHOTOS_PUBLIC_URL?: string
   JWT_SECRET: string
   CORS_ORIGIN: string
   GEMINI_API_KEY?: string

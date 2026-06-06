@@ -35,7 +35,9 @@ photosRouter.post('/shops/:id/photos', async (c) => {
       httpMetadata: { contentType: file.type },
     })
     const photoId = crypto.randomUUID()
-    const photoUrl = `/photos/${key}`
+    const photoUrl = c.env.PHOTOS_PUBLIC_URL
+      ? `${c.env.PHOTOS_PUBLIC_URL}/${key}`
+      : `/photos/${key}`
     await c.env.DB.prepare('INSERT INTO photos (id, shop_id, photo_url) VALUES (?, ?, ?)')
       .bind(photoId, shopId, photoUrl)
       .run()
