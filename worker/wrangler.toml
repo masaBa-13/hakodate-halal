@@ -12,9 +12,9 @@ binding = "RATE_LIMIT"
 id = "53ec6f96b69e4e5fb79895bb1efe23ce"
 preview_id = "a5af37583866452189559963ed3b8fd5"
 
-# [[r2_buckets]]
-# binding = "PHOTOS"
-# bucket_name = "halal-map-photos"
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "hakodate-halal-r2"
 
 [vars]
 # 本番CORSはPages Functionsプロキシ経由のためワイルドカードで問題なし
