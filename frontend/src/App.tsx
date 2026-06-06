@@ -32,7 +32,7 @@ export default function App() {
           <Route path="/shops/:id" element={<ShopPage lang={lang} t={t} />} />
           <Route path="/register" element={<RegisterPage t={t} />} />
           <Route path="/admin" element={<AdminPage t={t} />} />
-          <Route path="/legal" element={<LegalPage />} />
+          <Route path="/legal" element={<LegalPage t={t} />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/info" element={<InfoPage t={t} />} />

@@ -1,36 +1,40 @@
-export default function LegalPage() {
+interface LegalPageProps {
+  t: (key: string) => string
+}
+
+export default function LegalPage({ t }: LegalPageProps) {
+  const rows = [
+    { label: t('legalLabelSeller'),      value: '株式会社TackMore' },
+    { label: t('legalLabelCeo'),         value: '祐川雅治' },
+    { label: t('legalLabelAddress'),     value: '〒040-0004 北海道函館市杉並町6-2-103' },
+    { label: t('legalLabelPhone'),       value: '080-3327-2551' },
+    { label: t('legalLabelEmail'),       value: 'info@tackmore.jp' },
+    { label: t('legalLabelService'),     value: t('legalValueService') },
+    { label: t('legalLabelFee'),         value: t('legalValueFee') },
+    { label: t('legalLabelPayment'),     value: t('legalValueNA') },
+    { label: t('legalLabelRefund'),      value: t('legalValueNA') },
+    { label: t('legalLabelAvailability'), value: t('legalValueAvailability') },
+  ]
+
   return (
     <div style={styles.page}>
       <div style={styles.container}>
-        <h1 style={styles.h1}>特定商取引法に基づく表記</h1>
+        <h1 style={styles.h1}>{t('legalPageTitle')}</h1>
 
         <table style={styles.table}>
           <tbody>
-            <Row label="販売業者" value="株式会社TackMore" />
-            <Row label="代表者" value="祐川雅治" />
-            <Row label="所在地" value="〒040-0004 北海道函館市杉並町6-2-103" />
-            <Row label="電話番号" value="080-3327-2551" />
-            <Row label="メールアドレス" value="info@tackmore.jp" />
-            <Row label="サービス内容" value="函館・道南エリアのムスリムフレンドリー店舗情報の検索・閲覧・登録" />
-            <Row label="利用料金" value="無料（広告収入により運営）" />
-            <Row label="支払方法" value="該当なし（無料サービス）" />
-            <Row label="返金ポリシー" value="該当なし（無料サービス）" />
-            <Row label="サービス提供時期" value="会員登録不要・即時利用可能" />
+            {rows.map((row) => (
+              <tr key={row.label}>
+                <th style={styles.th}>{row.label}</th>
+                <td style={styles.td}>{row.value}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
-        <p style={styles.updated}>最終更新日: 2025年6月</p>
+        <p style={styles.updated}>{t('legalLastUpdated')}: 2025年6月</p>
       </div>
     </div>
-  )
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <tr>
-      <th style={styles.th}>{label}</th>
-      <td style={styles.td}>{value}</td>
-    </tr>
   )
 }
 
