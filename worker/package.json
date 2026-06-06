@@ -17,7 +17,9 @@
     "db:migrate:004:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/migrate_004.sql",
     "db:migrate:005": "wrangler d1 execute halal-map-db --file=src/db/migrate_005.sql",
     "db:migrate:005:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/migrate_005.sql",
-    "db:setup:remote": "npm run db:migrate:remote && npm run db:migrate:001:remote && npm run db:migrate:002:remote && npm run db:migrate:003:remote && npm run db:migrate:004:remote && npm run db:migrate:005:remote",
+    "db:migrate:006": "wrangler d1 execute halal-map-db --file=src/db/migrate_006.sql",
+    "db:migrate:006:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/migrate_006.sql",
+    "db:setup:remote": "npm run db:migrate:remote && npm run db:migrate:001:remote && npm run db:migrate:002:remote && npm run db:migrate:003:remote && npm run db:migrate:004:remote && npm run db:migrate:005:remote && npm run db:migrate:006:remote",
     "db:seed": "wrangler d1 execute halal-map-db --file=src/db/seed_shops.sql",
     "db:seed:remote": "wrangler d1 execute halal-map-db --remote --file=src/db/seed_shops.sql"
   },

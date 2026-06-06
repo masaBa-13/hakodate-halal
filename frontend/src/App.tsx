@@ -8,13 +8,14 @@ import AdminPage from './pages/AdminPage'
 import LegalPage from './pages/LegalPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
+import InfoPage from './pages/InfoPage'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
 import Footer from './components/Footer'
 import type { Lang } from './i18n/translations'
 
 // 法的・登録ページはフッター表示、BottomNavは常時表示
-const NO_FOOTER_PATHS = ['/', '/list']
+const NO_FOOTER_PATHS = ['/', '/list', '/info']
 
 export default function App() {
   const { lang, setLang, t } = useLang()
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/legal" element={<LegalPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/info" element={<InfoPage t={t} />} />
         </Routes>
       </div>
       {showFooter && <Footer />}

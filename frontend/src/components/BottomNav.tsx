@@ -33,6 +33,16 @@ function PlusCircleIcon() {
   )
 }
 
+function InfoIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <line x1="12" y1="8" x2="12" y2="8" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="12" y1="12" x2="12" y2="16" />
+    </svg>
+  )
+}
+
 interface BottomNavProps {
   t: (key: string) => string
 }
@@ -44,6 +54,7 @@ export default function BottomNav({ t }: BottomNavProps) {
     { to: '/', label: t('mapView'), icon: <MapIcon /> },
     { to: '/list', label: t('listView'), icon: <ListIcon /> },
     { to: '/register', label: t('registerShop'), icon: <PlusCircleIcon /> },
+    { to: '/info', label: t('infoNav'), icon: <InfoIcon /> },
   ]
 
   return (
@@ -95,10 +106,10 @@ const styles: Record<string, React.CSSProperties> = {
     flexDirection: 'column',
     alignItems: 'center',
     gap: '3px',
-    padding: '6px 20px',
+    flex: 1,
+    padding: '6px 4px',
     textDecoration: 'none',
     color: 'inherit',
-    minWidth: '72px',
     touchAction: 'manipulation',
     WebkitTapHighlightColor: 'transparent',
   },
