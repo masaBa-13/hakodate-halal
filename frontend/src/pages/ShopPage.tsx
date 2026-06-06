@@ -60,6 +60,7 @@ export default function ShopPage({ lang, t }: ShopPageProps) {
   const [shop, setShop] = useState<(Shop & { photos: string }) | null>(null)
   const [photos, setPhotos] = useState<Photo[]>([])
   const [uploading, setUploading] = useState(false)
+  const [hasFiles, setHasFiles] = useState(false)
   const [reportingId, setReportingId] = useState<string | null>(null)
   const [reportCategory, setReportCategory] = useState('')
   const [reportDetail, setReportDetail] = useState('')
@@ -286,8 +287,13 @@ export default function ShopPage({ lang, t }: ShopPageProps) {
           <h2 style={styles.sectionTitle}>{t('uploadPhoto')}</h2>
           <p style={styles.hint}>{t('selectFiles')}</p>
           <div style={styles.uploadRow}>
-            <input type="file" accept="image/*" multiple ref={fileRef} style={styles.fileInput} />
-            <button onClick={handlePhotoUpload} disabled={uploading} style={styles.btn}>
+            <input type="file" accept="image/*" multiple ref={fileRef} style={styles.fileInput}
+              onChange={(e) => setHasFiles((e.target.files?.length ?? 0) > 0)} />
+            <button
+              onClick={handlePhotoUpload}
+              disabled={!hasFiles || uploading}
+              style={{ ...styles.btn, ...(hasFiles ? {} : styles.btnDisabled) }}
+            >
               {uploading ? '...' : t('submit')}
             </button>
           </div>
@@ -401,6 +407,7 @@ const styles: Record<string, React.CSSProperties> = {
   uploadRow: { display: 'flex', flexDirection: 'column', gap: '10px' },
   fileInput: { width: '100%', fontSize: '13px' },
   btn: { background: 'var(--marker)', color: 'white', border: 'none', borderRadius: 'var(--radius-pill)', padding: '8px 20px', fontSize: '14px', fontWeight: 600, cursor: 'pointer' },
+  btnDisabled: { background: 'var(--border)', color: 'var(--text-muted)', cursor: 'default' },
   reportBtn: { display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'none', border: '1px solid var(--border)', borderRadius: 'var(--radius-pill)', padding: '6px 14px', fontSize: '13px', cursor: 'pointer', color: 'var(--text-muted)', flexShrink: 0 },
   overlay: { position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 },
   modal: { background: 'white', borderRadius: 'var(--radius-lg)', padding: '24px', width: '360px', maxWidth: '90vw' },
